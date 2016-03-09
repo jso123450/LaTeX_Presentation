@@ -1,5 +1,16 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{fullpage}
+\usepackage{listings}
+\usepackage{xcolor}
+
+%This allows us to insert LaTeX code snippets
+\lstset{
+    language=[LaTeX]TeX,
+    breaklines=true,
+    basicstyle=\tt\scriptsize,
+    keywordstyle=\color{blue},
+    identifierstyle=\color{magenta},
+}
 
 \title{LaTeX}
 \author{Jason Shin \and Johnny So \and Kevin Yan}
@@ -17,23 +28,25 @@
 \textbf{\TeX} (pronouned tech), created by Donald E. Knuth, is a program that is
 designed to typeset text and mathematical formulae. \textbf{\LaTeX} (pronounced
 luh-tech) is a kind of dialect of TeX, and is aimed to help beginners/authors to
-format their work in a professional manner. Together, the writer plays the role 
-of an author, \LaTeX plays the role of a book designer, and TeX is the 
-typesetter. It is quite different from WYSIWYG (what you see is what you get) 
-word processors like \textbf{Microsoft Word}. You generally cannot see, in real 
-time, what your document will look like as you work on it in \LaTeX since you 
-have to compile it. There are numerous ways to do so - stuff like pdflatex will 
-compile your \LaTeX file into a PDF, and there are packages/extensions in Emacs 
+format their work in a professional manner. Together, the writer plays the role
+of an author, \LaTeX plays the role of a book designer, and TeX is the
+typesetter. It is quite different from WYSIWYG (what you see is what you get)
+word processors like \textbf{Microsoft Word}. You generally cannot see, in real
+time, what your document will look like as you work on it in \LaTeX since you
+have to compile it. There are numerous ways to do so - stuff like pdflatex will
+compile your \LaTeX file into a PDF, and there are packages/extensions in Emacs
 that compile it from within the environment.
 
 %Kevin's Part
+
+%Intro/Summary Page
 \newpage
 \begin{center}
 	\bf{\Huge{The Cool Stuff}}
 \end{center}
-\bigskip 
+\bigskip
 \Large
-Now that we've gone over the basics, let's take a look at some of the other cool things you can do with LaTeX! 
+Now that we've gone over the basics, let's take a look at some of the other cool things you can do with LaTeX!
 \begin{itemize}
 	\item Tables and graphs
 	\item Pictures
@@ -41,4 +54,23 @@ Now that we've gone over the basics, let's take a look at some of the other cool
 	\item Environments
 	\item Packages
 \end{itemize}
+\medskip
+\large
+What is a research paper without any sort of graphics, after all? \\\\
+However, in order to use most of the cool features in LaTeX, we'll need to use packages. \\\\
+TO use a package, similar to imports in Java or Python, we simply declare \usepackage{packagename} at the top of our file. \\\\
+Afterwards, we can use all the functions that package provides. \\\\
+There are a few essential packages that most people will end up using. \\\\
+For example, textit{fullpage} will set the margins of the paper to normal 1x1 instead of math paper margins.
+
+%Graphicsx Page
+\newpage
+\begin{center}
+  \bf{\Huge{Pictures}}
+\end{center}
+\bigskip
+\Large
+The easiest way to insert a picture into LaTeX is with the package \textit{graphicsx}. \\\\
+\large
+
 \end{document}
