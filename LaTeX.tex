@@ -1,9 +1,17 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,11pt]{report}
 \usepackage{fullpage}
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage{siunitx}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 %This allows us to insert LaTeX code snippets
 \lstset{
@@ -35,13 +43,18 @@
 	{\large Software Development Pd. 6}
 \end{titlepage}
 	
+\newpage
+\tableofcontents
+
 %Johnny's Part
 
 \newpage
-\begin{center}
-  	\bf{\Huge{"Short" Introduction}}
-\end{center}
-\bigskip
+\chapter{Introduction}
+\section{Short Introduction}
+%\begin{center}
+%  	\bf{\Huge{"Short" Introduction}}
+%\end{center}
+%\bigskip
 \Large
 \textbf{\TeX} (pronouned tech), created by Donald E. Knuth, is a program that is
 designed to typeset text and mathematical formulae. \\\\
@@ -56,10 +69,11 @@ There are numerous ways to do so - programs like pdflatex and MiKTeX will
 compile your \LaTeX\ file into a PDF, and there are packages/extensions in Emacs, Atom, etc. that compile it from within the environment.
 
 \newpage
-\begin{center}
-	\bf{\Huge{"Short" Introduction (cont.)}}
-\end{center}
-\bigskip
+\section{Short Introduction (cont.)}
+%\begin{center}
+%	\bf{\Huge{"Short" Introduction (cont.)}}
+%\end{center}
+%\bigskip
 \Large
 In addition, LaTeX is considered to be a programming language. \\
 Various aspects of LaTeX are very programm-y. \\\\
@@ -72,10 +86,11 @@ in Python and Java. Users can also write their own commands/syntax.
 
 %Jason - Advantages and Disadvantages
 \newpage
-\begin{center}
-    \bf{\Huge{Advantages and Disadvantages}}
-\end{center}
-\bigskip
+\section{Advantages and Disadvantages}
+%\begin{center}
+%    \bf{\Huge{Advantages and Disadvantages}}
+%\end{center}
+%\bigskip
 
 People who are used to WYSIWYG word processors may question the advantages \LaTeX, but here are a few...
 
@@ -83,7 +98,7 @@ People who are used to WYSIWYG word processors may question the advantages \LaTe
   \item Professionally designed layouts are available
   \item Mathematical formulas are simple and intuitive to insert
   \item Few commands will allow the user to specify the layout of the document.
-  \item Additional packages are available in order to enhance or improve upon basic LaTeX.
+  \item Additional packages are available in order to enhance or improve upon basic \LaTeX.
   \item Everything ends up appearing very structured and organized.
   \item Free!
 \end{itemize}
@@ -91,17 +106,18 @@ People who are used to WYSIWYG word processors may question the advantages \LaTe
 However, there are still some disadvantages.
 
 \begin{itemize}
-    \item Because compilation is necessary, those who are not used to the syntax/structure of LaTeX may find themselves compiling over and over again.
+    \item Because you cannot directly see the final p, those who are not used to the syntax/structure of \LaTeX\ may find themselves compiling over and over again.
     \item Not really a great tool if all you want to do is get your ideas on paper quickly
     \item Not really used in fields outside of math, computer science, and physics.
 \end{itemize}
 
 %Basics
 \newpage
-\begin{center}
-	\bf{\Huge{The Basics}}
-\end{center}
-\bigskip
+\chapter{The Basics}
+%\begin{center}
+%	\bf{\Huge{The Basics}}
+%\end{center}
+%\bigskip
 \LARGE
 At its core, LaTeX is still a word processor, so if you just type text into a LaTeX file and compile it, something will appear. \\\\
 \Large
@@ -112,17 +128,18 @@ But there are certain ways you always begin a new document. \\
 	.....
 	\end{document}
 \end{verbatim}
-\bigskip
+%\bigskip
 Any phrase starting with a backslash LaTeX will try to read as a command instead of plain text. \\\\
 Here, the command \verb|\documentclass| allows you to set what kind of document you are creating. \textit{article} is for standard writing,
 but there are also options for long reports, books, presentations, letters, etc. \\\\
-The main arguments of any command are always enclosed in curly braces \verb|{}|, and the additional arguments are usually inside square brackets \verb|[]|. \\\\
+The main arguments of any command are always enclosed in curly braces \verb|{}|, and the additional arguments are usually inside square brackets \verb|[]|.
 
 %Basics cont.
 \newpage
-\begin{center}
-  \bf{\Huge{The Basics (cont.)}}
-\end{center}
+\section{Useful Tips}
+%\begin{center}
+%  \bf{\Huge{The Basics (cont.)}}
+%\end{center}
 \LARGE Here are some useful tips... \\\\
 \Large
 Single line comments are denoted with a \%, whereas block comments are handled with
@@ -132,26 +149,31 @@ Single line comments are denoted with a \%, whereas block comments are handled w
         line comment
     \end{comment}
 \end{verbatim}
-In order to add LaTeX code to your document without having it interpreted as LaTex, you can use the in-line 
+In order to add \LaTeX\ to your document without having it interpreted as \LaTex, you can use the in-line 
 \begin{verbatim}
     \verb|<LaTeX goes here>|    
 \end{verbatim}
-These special characters, if simply placed in-line will not print and will do things not intended.
+These special characters, if simply placed in-line, will not print and will cause unintended results.
 \begin{center}
 \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
 \end{center}
 In order to insert them, use these instead
 \begin{verbatim}
-    \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
 \end{verbatim}
-
+You can break up your \LaTeX\ document into sections, subsections, subsubsections, paragraphs, and subparagraphs in the article class. In the report and book classes, they can also have chapters. For example,
+\begin{verbatim}
+\section{<Section Name>}
+\end{verbatim}
+will create a section with the name Section Name. To create a table of contents, simply insert \verb|\tableofcontents| in a new page in the beginning of your document.
 
 %Environments
 \newpage
-\begin{center}
-	\bf{\Huge{The Basics - Environments}}
-\end{center}
-\bigskip
+\section{Environments}
+%\begin{center}
+%	\bf{\Huge{The Basics - Environments}}
+%\end{center}
+%\bigskip
 \LARGE
 The \verb|\begin| and \verb|\end| statements you see indicate the start and end of an environment. \\\\
 \Large
@@ -171,10 +193,11 @@ White space works very differently in LaTeX. Pressing \textbf{Enter} to create a
 
 %Math
 \newpage
-\begin{center}
-	\bf{\Huge{The Basics - Math}}
-\end{center}
-\bigskip
+\section{Math}
+%\begin{center}
+%	\bf{\Huge{The Basics - Math}}
+%\end{center}
+%\bigskip
 \LARGE
 LaTeX is used frequently for scientific/mathematic/research papers. It kind of follows that making math pretty is one of LaTeX's greatest strengths. \\\\
 \Large
@@ -204,10 +227,11 @@ Here is the definition of a Riemann sum:
 
 %Lists
 \newpage
-\begin{center}
-	\bf{\Huge{The Basics - Lists}}
-\end{center}
-\bigskip
+\section{Lists}
+%\begin{center}
+%	\bf{\Huge{The Basics - Lists}}
+%\end{center}
+%\bigskip
 \LARGE
 Lists are also very useful and easy to make in LaTeX. \\\\
 \Large
@@ -242,10 +266,11 @@ There's more things you can do with lists, but that's enough for now.
 
 %Tables
 \newpage
-\begin{center}
-	\bf{\Huge{The Basics - Tables}}
-\end{center}
-\bigskip
+\section{Tables}
+%\begin{center}
+%	\bf{\Huge{The Basics - Tables}}
+%\end{center}
+%\bigskip
 \LARGE
 It is, of course, also very useful to have access to tables. We are doing research, after all. 
 \begin{center}
@@ -276,11 +301,12 @@ While this makes LaTeX tedious at times, it gives you a level of customization f
 
 %Intro/Summary 
 \newpage
-\begin{center}
-	\bf{\Huge{The Cool Stuff}}
-\end{center}
-\bigskip
-\LARGE
+\chapter{The Cool Stuff}
+%\begin{center}
+%	\bf{\Huge{The Cool Stuff}}
+%\end{center}
+%\bigskip
+\Large
 Now that we've gone over the basics, let's take a look at some of the other cool things you can do with LaTeX!
 \begin{itemize}
 	\item Graphics
@@ -289,7 +315,7 @@ Now that we've gone over the basics, let's take a look at some of the other cool
 \bigskip
 \Large
 LaTeX has the capability to do almost anything that you'd need from a word processor. \\\\
-In order to implement most of the cool features available in \\ LaTeX, we'll need to use packages. \\\\
+In order to implement most of the cool features available in \LaTeX, we'll need to use packages. \\\\
 To use a package, similar to imports in Java or Python, we simply declare \verb|\usepackage{packagename}| at the top of our file. \\\\
 Afterwards, we can use all the functions that package provides. \\\\
 There are a few essential packages that most people will end up using. \\\\
@@ -297,10 +323,11 @@ For example, the package \textit{fullpage} will set the margins of the paper to 
 
 %Graphicx 
 \newpage
-\begin{center}
-  	\bf{\Huge{Pictures}}
-\end{center}
-\bigskip
+\section{Pictures}
+%\begin{center}
+%  	\bf{\Huge{Pictures}}
+%\end{center}
+%\bigskip
 \Large
 The easiest way to insert a picture in LaTeX is with the package \textit{graphicx}. \\
 \begin{figure}[h]
@@ -324,10 +351,11 @@ And you can use more than one argument in order of preference in case one of the
 
 %SI Unitx 
 \newpage
-\begin{center}
-	\bf{\Huge{SI Units}}
-\end{center}
-\bigskip
+\section{SI Units}
+%\begin{center}
+%	\bf{\Huge{SI Units}}
+%\end{center}
+%\bigskip
 \[x = 1.048\ \si{m} - 1.04\ \si{m} = 0.008\ \si{m}\]
 \[F = mg = 0.560\ \si{kg}*9.81\ \si{m/s^2} = 5.49\ \si{N}\]
 \[k_{eff} = avg(\frac{F}{x}) = \frac{1}{4}(\frac{5.49\ \si{N}}{0.008\ \si{m}} + \frac{7.94\ \si{N}}{0.017\ \si{m}} + \frac{10.40\ \si{N}}{0.024\ \si{m}} + \frac{8.63\ \si{N}}{0.020\ \si{m}}) = 504.5\ \si{N/m}\]
@@ -357,10 +385,11 @@ Putting a \textbackslash\ after any word or number adds a space. There are diffe
 
 %Code Snippets 
 \newpage
-\begin{center}
-	\bf{\Huge{Code Snippets}}
-\end{center}
-\bigskip
+\section{Code Snippets}
+%\begin{center}
+%	\bf{\Huge{Code Snippets}}
+%\end{center}
+%\bigskip
 \Large
 Here's a code snippet which contains the code needed to insert a code snippet into LaTeX.
 \begin{lstlisting}
@@ -383,10 +412,11 @@ The \textit{listings} package provides us with the new lstlisting environment, a
 
 %Johnny again - Applications
 \newpage
-\begin{center}
-	\bf{\Huge{Applications}}
-\end{center}
-\bigskip
+\chapter{Applications}
+%\begin{center}
+%	\bf{\Huge{Applications}}
+%\end{center}
+%\bigskip
 
 \begin{itemize}
   \item School papers
