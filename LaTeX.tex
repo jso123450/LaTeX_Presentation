@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{siunitx}
 
 %This allows us to insert LaTeX code snippets
 \lstset{
@@ -59,6 +60,8 @@ that compile it from within the environment.
 \begin{center}
 	\bf{\Huge{"Short" Introduction (cont.)}}
 \end{center}
+\bigskip
+\Large
 In addition, LaTeX is considered to be a programming language. \\
 Various aspects of LaTeX are very programm-y. \\\\
 For example, you probably already noticed
@@ -66,9 +69,56 @@ how \verb|\users| have a section at the top of their base file. \\\\
 The \verb|"\usepackage"| command essentially functions as an import from an existing flo \
 In addition, users can write thier own ``commands''.
 
+%Jason's Part (but it's Kevin doing it tho)
+
+%Basics
+\newpage
+\begin{center}
+	\bf{\Huge{The Basics}}
+\end{center}
+\bigskip
+\LARGE
+At its core, LaTeX is still a word processor, so if you just type text into a LaTeX file and compile it, something will appear. \\\\
+\Large
+But there are certain ways you always begin a new document. \\
+\begin{verbatim}
+	\documentclass[a4paper,12pt]{article}
+	\begin{document}
+	.....
+	\end{document}
+\end{verbatim}
+\bigskip
+Any phrase starting with a backslash LaTeX will try to read as a command instead of plain text. \\\\
+Here, the command \verb|\documentclass| allows you to set what kind of document you are creating. \textit{article} is for standard writing,
+but there are also options for long reports, books, presentations, letters, etc. \\\\
+The main arguments of any command are always enclosed in curly braces \verb|{}|, and the additional arguments are usually inside square brackets \verb|[]|. \\\\
+
+%Environments
+\newpage
+\begin{center}
+	\bf{\Huge{The Basics - Environments}}
+\end{center}
+\bigskip
+\LARGE
+The \verb|\begin| and \verb|\end| statements you see indicate the start and end of an environment. \\\\
+\Large
+Environments in LaTeX somehow affect everything enclosed within the begin and end statements. The simplest example would be
+the \textit{center} environment, which is pretty self-explanatory. \\
+\begin{center}
+	It does this to the enclosed text.
+\end{center}
+\begin{verbatim}
+	\begin{center}
+		It does this to the enclosed text.
+	\end{center}
+\end{verbatim}
+\bigskip
+It's important to note that before and after an environment, a new line is automatically created. \\\\
+White space works very differently in LaTeX. Pressing \textbf{Enter} to create a new line in the code doesn't create a new line after you compile. In order to go to the next line, you have to use a special command: either \verb|\newline|, \verb|\break|, or simply \verb|\\|.
+
 %Kevin's Part
 
-%Intro/Summary Page
+%Intro/Summary 
 \newpage
 \begin{center}
 	\bf{\Huge{The Cool Stuff}}
@@ -79,7 +129,7 @@ Now that we've gone over the basics, let's take a look at some of the other cool
 \begin{itemize}
 	\item Graphics
 	\item Packages
-	\item Custom commands and environments
+	
 \end{itemize}
 \bigskip
 \Large
@@ -90,7 +140,7 @@ Afterwards, we can use all the functions that package provides. \\\\
 There are a few essential packages that most people will end up using. \\\\
 For example, the package \textit{fullpage} will set the margins of the paper to normal 1x1 instead of math paper margins.
 
-%Graphicx Page
+%Graphicx 
 \newpage
 \begin{center}
   	\bf{\Huge{Pictures}}
@@ -117,12 +167,46 @@ h means to display the image \textit{here} on the page. Images enclosed in figur
 You can also use the arguments $t$ for top, $b$ for bottom, etc. \\\\
 And you can use more than one argument in order of preference in case one of them fails: \verb|[htb]|
 
-%Code Snippets Page
+%SI Unitx 
 \newpage
 \begin{center}
-	\bf{\Huge{lstlistings}}
+	\bf{\Huge{SI Units}}
 \end{center}
 \bigskip
+\[x = 1.048\ \si{m} - 1.04\ \si{m} = 0.008\ \si{m}\]
+\[F = mg = 0.560\ \si{kg}*9.81\ \si{m/s^2} = 5.49\ \si{N}\]
+\[k_{eff} = avg(\frac{F}{x}) = \frac{1}{4}(\frac{5.49\ \si{N}}{0.008\ \si{m}} + \frac{7.94\ \si{N}}{0.017\ \si{m}} + \frac{10.40\ \si{N}}{0.024\ \si{m}} + \frac{8.63\ \si{N}}{0.020\ \si{m}}) = 504.5\ \si{N/m}\]
+\bigskip
+\begin{verbatim}
+	\usepackage{siunitx}
+	.....
+
+	\begin{equation}
+
+	x = 1.048\ \si{m} - 1.04\ \si{m} = 0.008\ \si{m} \\
+
+	F = mg = 0.560\ \si{kg}*9.81\ \si{m/s^2} = 5.49\ \si{N} \\
+
+	k_{eff} = avg(\frac{F}{x}) = 
+	\frac{1}{4}(\frac{5.49\ \si{N}}{0.008\ \si{m}} +
+	\frac{7.94\ \si{N}}{0.017\ \si{m}} +
+	\frac{10.40\ \si{N}}{0.024\ \si{m}} +
+	\frac{8.63\ \si{N}}{0.020\ \si{m}}) 
+	= 504.5\ \si{N/m}
+
+	\end{equation}
+\end{verbatim}
+\bigskip
+Putting a \textbackslash\ after any word or number adds a space. There are different size spaces you can add, such as
+\verb|\,| (thin space), \verb|\enspace| (0.5 cm), \verb|\quad| (1 cm), etc.
+
+%Code Snippets 
+\newpage
+\begin{center}
+	\bf{\Huge{Code Snippets}}
+\end{center}
+\bigskip
+\Large
 Here's a code snippet which contains the code needed to insert a code snippet into LaTeX.
 \begin{lstlisting}
 	\usepackage{listings}
@@ -133,10 +217,12 @@ Here's a code snippet which contains the code needed to insert a code snippet in
 		breaklines=true,
 		basicstyle=\tt\scriptsize,
 		keywordstyle=\color{blue},
-		identifierstyle=\color{magenta},
+		identifierstyle=\color{magenta}
 	}
 	.....
 	\begin{lstlisting}
 		.....
 \end{lstlisting}
+The \textit{listings} package provides us with the new lstlisting environment, and a way to edit it: \textit{lstset}. \\\\
+\textit{xcolor} gives us access to the values "blue" and "magenta".
 \end{document}
