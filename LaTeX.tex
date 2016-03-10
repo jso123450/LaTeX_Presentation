@@ -101,19 +101,122 @@ The main arguments of any command are always enclosed in curly braces \verb|{}|,
 \LARGE
 The \verb|\begin| and \verb|\end| statements you see indicate the start and end of an environment. \\\\
 \Large
-Environments in LaTeX somehow affect everything enclosed within the begin and end statements. The simplest example would be
-the \textit{center} environment, which is pretty self-explanatory. \\
+Environments in LaTeX somehow affect everything enclosed within the begin and end statements. The simplest example would be something like
+the \textit{center} environment. 
 \begin{center}
-	It does this to the enclosed text.
+	{\bf It does this to the enclosed text.}
 \end{center}
 \begin{verbatim}
 	\begin{center}
-		It does this to the enclosed text.
+		{\bf It does this to the enclosed text.}
 	\end{center}
 \end{verbatim}
 \bigskip
 It's important to note that before and after an environment, a new line is automatically created. \\\\
 White space works very differently in LaTeX. Pressing \textbf{Enter} to create a new line in the code doesn't create a new line after you compile. In order to go to the next line, you have to use a special command: either \verb|\newline|, \verb|\break|, or simply \verb|\\|.
+
+%Math
+\newpage
+\begin{center}
+	\bf{\Huge{The Basics - Math}}
+\end{center}
+\bigskip
+\LARGE
+LaTeX is used frequently for scientific/mathematic/research papers. It kind of follows that making math pretty is one of LaTeX's greatest strengths. \\\\
+\Large
+Math equations can be inserted in LaTeX in a few ways. \\\\
+{\bf In a paragraph:} \\
+We can use the Pythagorean Theorem, $a^2 + b^2 = c^2$, to solve for the hypotenuse. \\
+\verb|$a^2 + b^2 = c^2$| \\\\
+{\bf In an environment:} \\
+Let's take a look at the equation for electric field:
+\begin{equation}
+	E = \int \frac{kdq}{r^2}
+\end{equation}
+\begin{verbatim}
+	Let's take a look at the equation for electric field:
+	\begin{equation}
+		E = \int \frac{kdq}{r^2}
+	\end{equation}
+\end{verbatim}
+\bigskip
+{\bf Using this special syntax:} \\
+Here is the definition of a Riemann sum:
+\[S = \sum_{i=1}^{n} f(x_i)\Delta x\]
+\begin{verbatim}
+	Here is the definition of a Riemann sum:
+	\[ S = \sum_{i=1}^{n} f(x_i) \Delta x \]
+\end{verbatim}
+
+%Lists
+\newpage
+\begin{center}
+	\bf{\Huge{The Basics - Lists}}
+\end{center}
+\bigskip
+\LARGE
+Lists are also very useful and easy to make in LaTeX. \\\\
+\Large
+They are inserted using different environments. \\\\
+{\bf The Unordered List}
+\begin{itemize}
+	\item Do you like pancakes?
+	\item Do you like waffles?
+\end{itemize}
+\begin{verbatim}
+	\begin{itemize}
+		\item Do you like pancakes?
+		\item Do you like waffles?
+	\end{itemize}
+\end{verbatim}
+\bigskip
+{\bf The Ordered List}
+\begin{enumerate}
+	\item Finish project
+	\item ???
+	\item Profit
+\end{enumerate}
+\begin{verbatim}
+	\begin{enumerate}
+		\item Finish project
+		\item ???
+		\item Profit
+	\end{enumerate}
+\end{verbatim}
+\vspace{\stretch{1}}
+There's more things you can do with lists, but that's enough for now. 
+
+%Tables
+\newpage
+\begin{center}
+	\bf{\Huge{The Basics - Tables}}
+\end{center}
+\bigskip
+\LARGE
+It is, of course, also very useful to have access to tables. We are doing research, after all. 
+\begin{center}
+	\begin{tabular}{|c|c|c|}
+		\hline
+ 		Boys & Girls & Total \\ \hline
+ 		5 & 17 & 22 \\ \hline 
+ 		15 & 11 & 26 \\ \hline
+	\end{tabular}
+\end{center}
+\begin{verbatim}
+	\begin{center}
+		\begin{tabular}{|c|c|c|}
+			\hline
+ 			Boys & Girls & Total \\ \hline
+ 			5 & 17 & 22 \\ \hline 
+ 			15 & 11 & 26 \\ \hline
+		\end{tabular}
+	\end{center}
+\end{verbatim}	
+\bigskip
+\Large
+Notice that here we have a nested environment (tabular within a center). This is perfectly legal and everything, I just thought y'all should know that it is. \\\\
+LaTeX being LaTeX, everything in the table must be specified. Where and where not to draw a vertical line, a horizontal line, etc. \\\\
+While this makes LaTeX tedious at times, it gives you a level of customization far greater than any standard word processor. 
 
 %Kevin's Part
 
@@ -128,7 +231,6 @@ Now that we've gone over the basics, let's take a look at some of the other cool
 \begin{itemize}
 	\item Graphics
 	\item Packages
-	
 \end{itemize}
 \bigskip
 \Large
@@ -225,7 +327,7 @@ Here's a code snippet which contains the code needed to insert a code snippet in
 The \textit{listings} package provides us with the new lstlisting environment, and a way to edit it: \textit{lstset}. \\\\
 \textit{xcolor} gives us access to the values "blue" and "magenta".
 
-%Applications
+%Johnny again - Applications
 \newpage
 \begin{center}
 	\bf{\Huge{Applications}}
