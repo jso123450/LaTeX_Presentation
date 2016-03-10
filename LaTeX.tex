@@ -83,7 +83,7 @@ People who are used to WYSIWYG word processors may question the advantages \LaTe
   \item Professionally designed layouts are available
   \item Mathematical formulas are simple and intuitive to insert
   \item Few commands will allow the user to specify the layout of the document.
-  \item Additional packages are available in order to enhance or improve upon basic \LaTeX.
+  \item Additional packages are available in order to enhance or improve upon basic LaTeX.
   \item Everything ends up appearing very structured and organized.
   \item Free!
 \end{itemize}
@@ -91,7 +91,7 @@ People who are used to WYSIWYG word processors may question the advantages \LaTe
 However, there are still some disadvantages.
 
 \begin{itemize}
-    \item Because compilation is necessary, those who are not used to the syntax/structure of \LaTeX may find themselves compiling over and over again.
+    \item Because compilation is necessary, those who are not used to the syntax/structure of LaTeX may find themselves compiling over and over again.
     \item Not really a great tool if all you want to do is get your ideas on paper quickly
     \item Not really used in fields outside of math, computer science, and physics.
 \end{itemize}
@@ -117,6 +117,34 @@ Any phrase starting with a backslash LaTeX will try to read as a command instead
 Here, the command \verb|\documentclass| allows you to set what kind of document you are creating. \textit{article} is for standard writing,
 but there are also options for long reports, books, presentations, letters, etc. \\\\
 The main arguments of any command are always enclosed in curly braces \verb|{}|, and the additional arguments are usually inside square brackets \verb|[]|. \\\\
+
+%Basics cont.
+\newpage
+\begin{center}
+  \bf{\Huge{The Basics (cont.)}}
+\end{center}
+\LARGE Here are some useful tips... \\\\
+\Large
+Single line comments are denoted with a \%, whereas block comments are handled with
+\begin{verbatim}
+    \begin{comment}
+        This is a multi
+        line comment
+    \end{comment}
+\end{verbatim}
+In order to add LaTeX code to your document without having it interpreted as LaTex, you can use the in-line 
+\begin{verbatim}
+    \verb|<LaTeX goes here>|    
+\end{verbatim}
+These special characters, if simply placed in-line will not print and will do things not intended.
+\begin{center}
+\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+\end{center}
+In order to insert them, use these instead
+\begin{verbatim}
+    \# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash
+\end{verbatim}
+
 
 %Environments
 \newpage
