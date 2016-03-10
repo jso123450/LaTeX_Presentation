@@ -1,40 +1,58 @@
 \documentclass[a4paper,12pt]{article}
 \usepackage{fullpage}
+\usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
 
 %This allows us to insert LaTeX code snippets
 \lstset{
-    language=[LaTeX]TeX,
-    breaklines=true,
-    basicstyle=\tt\scriptsize,
-    keywordstyle=\color{blue},
-    identifierstyle=\color{magenta},
+   	language=[LaTeX]TeX,
+	aboveskip=5mm,
+	belowskip=5mm,
+ 	breaklines=true,
+	basicstyle=\large\scriptsize,
+   	keywordstyle=\color{blue},
+   	identifierstyle=\color{magenta},
 }
 
-\title{LaTeX}
-\author{Jason Shin \and Johnny So \and Kevin Yan}
-
 \begin{document}
-\maketitle
 
+%Title Page
+\begin{titlepage}
+	\begin{figure}[!ht]
+		\centering
+			\includegraphics[scale = 0.1]{logo}
+	\end{figure}
+	\vspace{3cm}
+	\centering
+	{\huge By Team \par}
+	\vspace{0.5cm}
+	{\huge\itshape Can I Eat LaTeX \par}
+	\vspace{2cm}
+	{\scshape\Large  Members: Jason Shin, Johnny So, Kevin Yan\par}
+	\vspace{\stretch{1}}
+	{\large Software Development Pd. 6}
+\end{titlepage}
+	
 %Johnny's Part
+
 \newpage
 \begin{center}
-  \bf{\Huge{Short Introduction}}
+  	\bf{\Huge{"Short" Introduction}}
 \end{center}
 \bigskip
 \Large
 \textbf{\TeX} (pronouned tech), created by Donald E. Knuth, is a program that is
-designed to typeset text and mathematical formulae. \textbf{\LaTeX} (pronounced
-luh-tech) is a kind of dialect of TeX, and is aimed to help beginners/authors to
-format their work in a professional manner. Together, the writer plays the role
-of an author, \LaTeX plays the role of a book designer, and TeX is the
+designed to typeset text and mathematical formulae. \\\\
+\textbf{\LaTeX} (pronounced luh-tech) is a kind of dialect of TeX, and is aimed to help beginners/authors to
+format their work in a professional manner. \\\\
+Together, the writer plays the role of an author, \LaTeX\ plays the role of a book designer, and TeX is the
 typesetter. It is quite different from WYSIWYG (what you see is what you get)
 word processors like \textbf{Microsoft Word}. You generally cannot see, in real
-time, what your document will look like as you work on it in \LaTeX since you
-have to compile it. There are numerous ways to do so - stuff like pdflatex will
-compile your \LaTeX file into a PDF, and there are packages/extensions in Emacs
+time, what your document will look like as you work on it in \LaTeX\ since you
+have to compile it. \\\\
+There are numerous ways to do so - programs like pdflatex and MiKTeX will
+compile your \LaTeX\ file into a PDF, and there are packages/extensions in Emacs, Atom, etc.
 that compile it from within the environment.
 
 %Kevin's Part
@@ -45,32 +63,69 @@ that compile it from within the environment.
 	\bf{\Huge{The Cool Stuff}}
 \end{center}
 \bigskip
-\Large
+\LARGE
 Now that we've gone over the basics, let's take a look at some of the other cool things you can do with LaTeX!
 \begin{itemize}
-	\item Tables and graphs
-	\item Pictures
-	\item Commands
-	\item Environments
+	\item Graphics
 	\item Packages
+	\item Custom commands and environments
 \end{itemize}
-\medskip
-\large
-What is a research paper without any sort of graphics, after all? \\\\
-However, in order to use most of the cool features in LaTeX, we'll need to use packages. \\\\
-TO use a package, similar to imports in Java or Python, we simply declare \usepackage{packagename} at the top of our file. \\\\
+\bigskip
+\Large
+LaTeX has the capability to do almost anything that you'd need from a word processor. \\\\
+In order to implement most of the cool features available in \\ LaTeX, we'll need to use packages. \\\\
+To use a package, similar to imports in Java or Python, we simply declare \verb|\usepackage{packagename}| at the top of our file. \\\\
 Afterwards, we can use all the functions that package provides. \\\\
 There are a few essential packages that most people will end up using. \\\\
-For example, textit{fullpage} will set the margins of the paper to normal 1x1 instead of math paper margins.
+For example, the package \textit{fullpage} will set the margins of the paper to normal 1x1 instead of math paper margins.
 
-%Graphicsx Page
+%Graphicx Page
 \newpage
 \begin{center}
-  \bf{\Huge{Pictures}}
+  	\bf{\Huge{Pictures}}
 \end{center}
 \bigskip
 \Large
-The easiest way to insert a picture into LaTeX is with the package \textit{graphicsx}. \\\\
+The easiest way to insert a picture in LaTeX is with the package \textit{graphicx}. \\
+\begin{figure}[h]
+	\centering
+		\includegraphics[scale = 0.5]{heavy_breathing}
+\end{figure}
 \large
+\begin{verbatim}
+	\usepackage{graphicx}
+	.....
+	\begin{figure}[h]
+		\centering
+		\includegraphics[scale = 0.5]{heavy_breathing}
+	\end{figure}
+\end{verbatim}
+\bigskip
+Here, the \verb|[h]| is an additional argument that can be given to the environment. \\\\
+h means to display the image \textit{here} on the page. Images enclosed in figure environments will float to the top of the page by default. \\\\
+You can also use the arguments $t$ for top, $b$ for bottom, etc. \\\\
+And you can use more than one argument in order of preference in case one of them fails: \verb|[htb]|
 
+%Code Snippets Page
+\newpage
+\begin{center}
+	\bf{\Huge{lstlistings}}
+\end{center}
+\bigskip
+Here's a code snippet which contains the code needed to insert a code snippet into LaTeX.
+\begin{lstlisting}
+	\usepackage{listings}
+	\usepackage{xcolor}
+	.....
+	\lstset{
+		language=[LaTeX]TeX,
+		breaklines=true,
+		basicstyle=\tt\scriptsize,
+		keywordstyle=\color{blue},
+		identifierstyle=\color{magenta},
+	}
+	.....
+	\begin{lstlisting}
+		.....
+\end{lstlisting}
 \end{document}
