@@ -78,8 +78,6 @@ svg.append("g")
 
 // Formatting the individual bars
 
-var hehe = "";
-
 svg.selectAll("bar")
     .data(fields)
     .enter().append("rect")
