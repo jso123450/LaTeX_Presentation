@@ -19,7 +19,7 @@ var percents = fields.map(function(key) {
 // Bar Graph
 
 // The initial variable setup
-var margin_top = 50;
+var margin_top = 70;
 var margin_bottom = 200;
 var margin_right = 50;
 var margin_left = 50;
@@ -71,9 +71,10 @@ svg.append("g")
     .append("text")
     .attr("transform", "rotate(-90)")
     .attr("y", 6)
-    .attr("dy", ".71em")
+    .attr("dx","5em")
+    .attr("dy", "-1.0em")
     .style("text-anchor", "end")
-    .text("Votes");
+    .text("Percentage");
 
 // Formatting the individual bars
 
