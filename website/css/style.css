@@ -7,3 +7,10 @@
     stroke: #000;
     shape-rendering: crispEdges;
 }
+
+.column{
+    margin: auto;
+    width: 720px;
+    padding-right: 240px;
+    position: relative;
+}
