@@ -49,8 +49,7 @@ var yAxis = d3.svg.axis()
 //The tooltip pop-up that appears on mouseover 
 var tip = d3.tip()
     .attr("class", "d3-tip")
-    .html(function(d) {return y(latex_usage_rate[d]);
-    });
+    .html(function (d){return d;});
 
 
 // Setting up the SVG coordinate space
@@ -58,9 +57,7 @@ var svg = d3.select("barchart").append("svg")
     .attr("width", margin_left + bar_width + margin_right)
     .attr("height", margin_bottom + bar_height + margin_top)
     .append("g")
-    .attr("transform", "translate(" + margin_left + "," + margin_top + ")")
-    .on("mouseover", tip.show)
-    .on("mouseout", tip.hide);
+    .attr("transform", "translate(" + margin_left + "," + margin_top + ")");
 
 // Formatting the x axis
 svg.append("g")
@@ -87,12 +84,19 @@ svg.append("g")
 
 // Formatting the individual bars
 
+svg.call(tip)
+
 svg.selectAll("bar")
     .data(fields)
     .enter().append("rect")
     .style("fill", function(d) {
         d = d.toLowerCase();
-	return "steelblue";
+	if (d === "mean/total"){
+	    return "green";
+	}
+	else {
+	    return "steelblue";
+	}
     })
     .attr("x", function(d) {
         return x(d);
@@ -103,6 +107,10 @@ svg.selectAll("bar")
     })
     .attr("height", function(d) {
         return (bar_height - y(latex_usage_rate[d]));
+    })
+    .on('mouseover', function(d){
+	tip.show(latex_usage_rate[d] + "%");
+    })
+    .on('mouseout', function(d){
+	tip.hide(latex_usage_rate[d] + "%");
     });
-
-svg.call(tip);
