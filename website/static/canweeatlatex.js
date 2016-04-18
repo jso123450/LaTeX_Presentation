@@ -49,7 +49,7 @@ var yAxis = d3.svg.axis()
 //The tooltip pop-up that appears on mouseover 
 var tip = d3.tip()
     .attr("class", "d3-tip")
-    .html(function(d) {return d.y;
+    .html(function(d) {return "hello";
     });
 
 
