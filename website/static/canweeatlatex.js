@@ -46,12 +46,21 @@ var yAxis = d3.svg.axis()
     .scale(y)
     .orient("left");
 
+//The tooltip pop-up that appears on mouseover 
+var tip = d3.tip()
+    .attr("class", "d3-tip")
+    .html(function(d) {return d.name + ": " + d.value;
+    });
+
+
 // Setting up the SVG coordinate space
 var svg = d3.select("barchart").append("svg")
     .attr("width", margin_left + bar_width + margin_right)
     .attr("height", margin_bottom + bar_height + margin_top)
     .append("g")
-    .attr("transform", "translate(" + margin_left + "," + margin_top + ")");
+    .attr("transform", "translate(" + margin_left + "," + margin_top + ")")
+    .on("mouseover", tip.show)
+    .on("mouseout", tip.hide);
 
 // Formatting the x axis
 svg.append("g")
@@ -95,3 +104,5 @@ svg.selectAll("bar")
     .attr("height", function(d) {
         return (bar_height - y(latex_usage_rate[d]));
     });
+
+svg.call(tip);
