@@ -114,3 +114,51 @@ svg.selectAll("bar")
     .on('mouseout', function(d){
 	tip.hide(latex_usage_rate[d] + "%");
     });
+
+// Compiled Image Transitions
+var center = d3.select("#center")
+    .transition()
+    .duration(500)
+    .style("opacity",0);
+
+var centerCode = d3.select("#centerCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#centerCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#center")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });
+
+/*
+var ihop = d3.select("#ihop")
+    .style("opacity",0);
+var pythagorean = d3.select("#pythagorean")
+    .style("opacity",0);
+var table = d3.select("#table")
+    .style("opacity",0);
+var electric = d3.select("#electric")
+    .style("opacity",0);
+var physics = d3.select("#physics")
+    .style("opacity",0);
+var riemann = d3.select("#riemann")
+    .style("opacity",0);
+var ol = d3.select("#ol")
+    .style("opacity",0);
+*/
