@@ -3,7 +3,7 @@
 <html>
 
   <head>
-    <title> Can We Eat Latex? </title>
+    <title> Can We Eat LaTeX? </title>
     <link rel="stylesheet" href="../css/style.css">
   </head>
 
@@ -38,8 +38,8 @@
       </p>
       <p>
 	In addition, LaTeX is considered to be a programming language. Various aspects of LaTeX are very programm-y.
-For example, you probably already noticed how \users have a section at the top of their base file.
-The &ldquo;\usepackage&rdquo; command essentially functions as import does in Python and Java. Users can also write their own commands/syntax.
+For example, you probably already noticed how <b>\users</b> have a section at the top of their base file.
+The <b>&ldquo;\usepackage&rdquo;</b> command essentially functions as import does in Python and Java. Users can also write their own commands/syntax.
       </p>
       <p>People who are used to WYSIWYG word processors may question the advantages LATEX, but here are a few...</p>
       <ul>
@@ -52,11 +52,167 @@ The &ldquo;\usepackage&rdquo; command essentially functions as import does in Py
       </ul>
       <p>However, there are still some disadvantages.</p>
       <ul>
-	<li>Because you cannot directly see the final p, those who are not used to the syntax/structure of LATEX may find themselves compiling over and over again.</li>
+	<li>Because you cannot directly see the final p, those who are not used to the syntax/structure of LaTeX may find themselves compiling over and over again.</li>
 	<li>Not really a great tool if all you want to do is get your ideas on paper quickly</li>
 	<li>Not really used in fields outside of math, computer science, and physics.</li>
       </ul>
       <h2> The Basics </h2>
+      <p>At its core, LaTeX is still a word processor, so if you just type text into a LaTeX file and compile it, something will appear.</p>
+      <p>But there are certain ways you always begin a new document.</p>
+      <pre><code>
+	  \documentclass[a4paper,12pt]{article}
+	  \begin{document} 
+	  .....
+	  \end{document}
+      </code></pre>
+      <p>Any phrase starting with a backslash LaTeX will try to read as a command instead of plain text.</p>
+      <p>Here, the command <b>\documentclass</b> allows you to set what kind of document you are creating. <i>article</i> is for standard writing, but there are also options for long reports, books, presentations, letters, etc.</p>
+      <p>The main arguments of any command are always enclosed in curly braces <b>{}</b>, and the additional arguments are usually inside square brackets <b>[]</b>.</p>
+      <h2> Useful Tips </h2>
+      <p>Single line comments are denoted with a <b>%</b>, whereas block comments are handled with</p>
+      <pre><code>
+	  \begin{comment} 
+	      This is a 
+	      multi line 
+	      comment
+	  \end{comment}
+      </code></pre>
+      <p>In order to add LaTeX to your document without having it interpreted as code, you can use the in-line</p>
+      <pre><code>
+	  \verb|(LaTeX goes here)|
+      </code></pre>
+      <p>These special characters, if simply placed in-line, will not print and will cause unintended results.</p>
+      <p style="padding-left: 100px;"><b> # $ % ^ &  {} ~ \ </b></p>
+      <p>In order to insert them, use these instead</p>
+      <p style="padding-left: 100px;"><b>\# \$ \% \^{} \& \_ \{ \} \~{} \textbackslash</b></p>
+      <p>You can break up your LaTeX document into sections, subsections, subsubsections, paragraphs, and subparagraphs in the article class. In the report and book classes, they can also have chapters. For example,</p>
+      <p><b>\section{(Section Name)}</b> will create a section with the name Section Name. To create a table of contents, simply insert <b>\tableofcontents</b> in a new page in the beginning of your document.</p>
+      <h2> Environments </h2>
+      <p>The <b>\begin</b> and <b>\end</b> statements you see indicate the start and end of an environment.</p>
+      <p>Environments in LaTeX somehow affect everything enclosed within the begin and end statements. The simplest example would be something like the center environment. which centers the enclosed text.</p>
+      <pre><code>
+	  \begin{center}
+	  (This text will be centered.)
+	  \end{center}
+      </code></pre>
+      <p>It's important to note that before and after an environment, a new line is automatically created.</p>
+      <p>In general, white space works very differently in LaTeX. Pressing Enter to create a new line in the code doesn't create a new line after you compile. In order to go to the next line, you have to use a special command: either <b>\newline</b>, <b>\break</b>, or simply <b>\\</b>.</p>
+      <h2> Math </h2>
+      <p>LaTeX is used frequently for scientific/mathematic/research papers. It kind of follows that making math pretty is one of LaTeX's greatest strengths.</p>
+      <p>Math equations can be inserted in LaTeX in a few ways.</p>
+      <h3>In a paragraph:</h3>
+      <p>We can use the Pythagorean Theorem, $a^2 + b^2 = c^2$, to solve for the hypotenuse.</p>
+      <h3>In an environment:</h3>
+      <p>The equation for electric field:</p>
+      <pre><code>
+	  \begin{equation}
+	      E = \int \frac{kdq}{r^2} 
+	  \end{equation}
+      </code></pre>
+      <h3>Using this special syntax:</h3>
+      <p>The equation for a Riemann sum:</p>
+      <pre><code>
+	  \[ S = \sum_{i=1}^{n} f(x_i) \Delta x \]
+      </code></pre>
+      <h2> Lists </h2>
+      <p>Lists are also very useful and easy to make in LaTeX.</p>
+      <p>They are inserted using different environments.</p>
+      <h3>The Unordered List</h3>
+      <pre><code>
+	  \begin{itemize} 
+	      \item Do you like pancakes?
+	      \item Do you like waffles? 
+	  \end{itemize}
+      </code></pre>
+      <h3>The Ordered List</h3>
+      <pre><code>
+	  \begin{enumerate} 
+	      \item Finish project 
+	      \item ???
+	  \item Profit
+	  \end{enumerate}
+      </code></pre>
+      <p>There's more things you can do with lists, but that's enough for now.</p>
+      <h2> Tables </h2>
+      <p>It is, of course, also very useful to have access to tables. We are doing research, after all.</p>
+      <pre><code>
+	  \begin{center}
+	  \begin{tabular}{|c|c|c|}
+	      \hline
+	      Boys & Girls & Total \\ \hline
+	      5 & 17 & 22 \\ \hline
+	      15 & 11 & 26 \\ \hline
+	  \end{tabular}
+	  \end{center}
+      </code></pre>
+      <p>Notice that here we have a nested environment (tabular within a center). This is perfectly legal and everything, I just thought y'all should know that it is.</p>
+      <p>LaTeX being LaTeX, everything in the table must be specified. Where and where not to draw a vertical line, a horizontal line, etc.</p>
+      <p>While this makes LaTeX tedious at times, it gives you a level of customization far greater than any standard word processor.</p>
+      <h2> The Cool Stuff </h2>
+      <p>Now that we've gone over the basics, let's take a look at some of the other cool things you can do with LaTeX!</p>
+      <ul>
+	<li>Graphics</li>
+	<li>Packages</li>
+      </ul>
+      <p>LaTeX has the capability to do almost anything that you'd need from a word processor.</p>
+      <p>But in order to implement most of the cool features available in LATEX, we'll need to use packages.</p>
+      <p>To use a package, similar to imports in Java or Python, we simply declare <b>\usepackage{packagename}</b> at the top of our file.</p>
+      <p>Afterwards, we can use all the functions that package provides.</p>
+      <p>There are a few essential packages that most people will end up using.</p>
+      <p>For example, the package <i>fullpage</i> will set the margins of the paper to normal 1 in. x 1 in. instead of standard math paper margins.</p>
+      <h2> Pictures </h2>
+      <p>The easiest way to insert a picture in LaTeX is with the package <i>graphicx</i>.</p>
+      <pre><code>
+	  \usepackage{graphicx} 
+	  .....
+	  \begin{figure}[h]
+	      \centering
+	      \includegraphics[scale = 0.5]{heavy_breathing}
+	  \end{figure}
+      </code></pre>
+      <p>Here, the [h] is an additional argument that can be given to the environment.</p>
+      <p><i>h</i> means to display the image here on the page. Images enclosed in figure environments will float to the top of the page by default.</p>
+      <p>You can also use the arguments <i>t</i> for top, <i>b</i> for bottom, etc.</p>
+      <p>And you can use more than one argument in order of preference in case one of them fails, like so: <b>[htb]</b></p>
+      <h2> SI Units </h2>
+      <pre><code>
+	  \usepackage{siunitx} 
+	  .....
+	  \begin{equation}
+	      x = 1.048\ \si{m} - 1.04\ \si{m} = 0.008\ \si{m} \\ 
+	      F = mg = 0.560\ \si{kg}*9.81\ \si{m/s^2} = 5.49\ \si{N} \\
+	  \end{equation}
+      </code></pre>
+      <p>
+	Putting a \ after any word or number adds a space. There are different size spaces you can add, such as <b>\</b>, (thin space), <b>\enspace</b> (0.5 cm), <b>\quad</b> (1 cm), etc.
+      </p>
+      <h2> Code Snippets </h2>
+      <p>Here's a code snippet which contains the code needed to insert a code snippet into LaTeX.</p>
+      <pre><code>
+	  \usepackage{listings} 
+	  \usepackage{xcolor}
+	  .....
+	  \lstset{ 
+	      language = [LaTeX]TeX, 
+	      breaklines = true, 
+	      basicstyle = \tt\ scriptsize,
+	      keywordstyle = \color{blue },
+	      identifierstyle = \color{magenta}
+	  }
+	  .....
+	  \begin{lstlisting} 
+	  .....
+      </code></pre>
+      <p>The <i>listings</i> package provides us with the new <i>lstlisting</i> environment, and a way to edit it: <i>lstset</i>.</p> 
+      <p><i>xcolor</i> gives us access to the values &ldquo;blue&rdquo; and &ldquo;magenta&rdquo;.</p>
+      <h2> Applications </h2>
+      <p>Here are some common uses for LaTeX:</p>
+      <ul>
+	<li>School papers</li>
+	<li>Notes</li>
+	<li>Scholarly Magazines</li>
+	<li>Competetions (for Math, Science)</li>
+      </ul>     
     </div>
     <br>
     <br>
