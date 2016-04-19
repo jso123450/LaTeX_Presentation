@@ -116,6 +116,8 @@ svg.selectAll("bar")
     });
 
 // Compiled Image Transitions
+/*------------------------------- Centering Example -----------------------------*/
+
 var center = d3.select("#center")
     .transition()
     .duration(500)
@@ -146,19 +148,258 @@ var centerCode = d3.select("#centerCode")
 	    }); 
     });
 
-/*
-var ihop = d3.select("#ihop")
-    .style("opacity",0);
+/*------------------------------ In-line Math Example ---------------------------------*/
+
 var pythagorean = d3.select("#pythagorean")
+    .transition()
+    .duration(500)
     .style("opacity",0);
-var table = d3.select("#table")
-    .style("opacity",0);
+
+var pythCode = d3.select("#pythCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#pythCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#pythagorean")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });
+
+/*-------------------------- Equation Environment Example ---------------------------*/
+
 var electric = d3.select("#electric")
+    .transition()
+    .duration(500)
     .style("opacity",0);
-var physics = d3.select("#physics")
-    .style("opacity",0);
+
+var elecCode = d3.select("#electricCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#electricCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#electric")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });
+
+/*-------------------------- Special Math Syntax Example --------------------------*/
+
 var riemann = d3.select("#riemann")
+    .transition()
+    .duration(500)
     .style("opacity",0);
+
+var riemannCode = d3.select("#riemannCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#riemannCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#riemann")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });
+
+/*--------------------------- Unordered List Example ------------------------------*/
+
+var ihop = d3.select("#ihop")
+    .transition()
+    .duration(500)
+    .style("opacity",0);
+
+var ihopCode = d3.select("#ihopCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#ihopCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#ihop")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });
+
+/*------------------------------ Ordered List Example ------------------------------*/
+
 var ol = d3.select("#ol")
+    .transition()
+    .duration(500)
     .style("opacity",0);
-*/
+
+var olCode = d3.select("#olCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#olCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#ol")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });
+
+/*--------------------------------- Table Example ---------------------------------*/
+
+var table = d3.select("#table")
+    .transition()
+    .duration(500)
+    .style("opacity",0);
+
+var tableCode = d3.select("#tableCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#tableCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#table")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });
+
+/*------------------------------- GraphicsX Example --------------------------------*/
+
+var cat = d3.select("#cat")
+    .transition()
+    .duration(500)
+    .style("opacity",0);
+
+var catCode = d3.select("#catCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#catCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#cat")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });
+
+/*------------------------------- SI Unit X Example --------------------------------*/
+
+var physics = d3.select("#physics")
+    .transition()
+    .duration(500)
+    .style("opacity",0);
+
+var physicsCode = d3.select("#physicsCode")
+    .style("opacity",100) // you must explicitly set the value first
+    .on('click',function(){
+	d3.select("#physicsCode")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    });
+	d3.select("#physics")
+	    .transition()
+	    .duration(500)
+	    .style("opacity", function(){
+		console.log(this.style.opacity);
+		if (this.style.opacity == 0)
+		    return 100;
+		else if (this.style.opacity == 100)
+		    return 0;
+	    }); 
+    });

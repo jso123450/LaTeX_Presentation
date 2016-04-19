@@ -96,48 +96,55 @@ in.</li>
 	  (This text will be centered.)
 	  \end{center}
       </code></pre>
-      <img src="../static/pics/Center.png" id="center"></img>
+      <img src="../static/pics/Center.png" id="center" align="center"></img>
       <p>It's important to note that before and after an environment, a new line is automatically created.</p>
       <p>In general, white space works very differently in LaTeX. Pressing Enter to create a new line in the code doesn't create a new line after you compile. In order to go to the next line, you have to use a special command: either <b>\newline</b>, <b>\break</b>, or simply <b>\\</b>.</p>
       <h2> Math </h2>
       <p>LaTeX is used frequently for scientific/mathematic/research papers. It kind of follows that making math pretty is one of LaTeX's greatest strengths.</p>
       <p>Math equations can be inserted in LaTeX in a few ways.</p>
       <h3>In a paragraph:</h3>
-      <p>We can use the Pythagorean Theorem, $a^2 + b^2 = c^2$, to solve for the hypotenuse.</p>
+      <pre id="pythCode"><code>
+	  We can use the Pythagorean Theorem, <b>$a^2 + b^2 = c^2$</b>, to solve for the hypotenuse.
+      </code></pre>
+      <img src="../static/pics/Pythagorean.png" id="pythagorean"></img>
       <h3>In an environment:</h3>
       <p>The equation for electric field:</p>
-      <pre><code>
+      <pre id="electricCode"><code>
 	  \begin{equation}
 	      E = \int \frac{kdq}{r^2} 
 	  \end{equation}
       </code></pre>
+      <img src="../static/pics/Electric.png" id="electric"></img>
       <h3>Using this special syntax:</h3>
       <p>The equation for a Riemann sum:</p>
-      <pre><code>
+      <pre id="riemannCode"><code>
 	  \[ S = \sum_{i=1}^{n} f(x_i) \Delta x \]
       </code></pre>
+      <img src="../static/pics/Riemann.png" id="riemann"></img>
       <h2> Lists </h2>
       <p>Lists are also very useful and easy to make in LaTeX.</p>
       <p>They are inserted using different environments.</p>
       <h3>The Unordered List</h3>
-      <pre><code>
+      <pre id="ihopCode"><code>
 	  \begin{itemize} 
 	      \item Do you like pancakes?
 	      \item Do you like waffles? 
 	  \end{itemize}
       </code></pre>
+      <img src="../static/pics/IHOP.png" id="ihop"></img>
       <h3>The Ordered List</h3>
-      <pre><code>
+      <pre id="olCode"><code>
 	  \begin{enumerate} 
 	      \item Finish project 
 	      \item ???
 	  \item Profit
 	  \end{enumerate}
       </code></pre>
+      <img src="../static/pics/ol.png" id="ol"></img>
       <p>There's more things you can do with lists, but that's enough for now.</p>
       <h2> Tables </h2>
       <p>It is, of course, also very useful to have access to tables. We are doing research, after all.</p>
-      <pre><code>
+      <pre id="tableCode"><code>
 	  \begin{center}
 	  \begin{tabular}{|c|c|c|}
 	      \hline
@@ -147,6 +154,7 @@ in.</li>
 	  \end{tabular}
 	  \end{center}
       </code></pre>
+      <img src="../static/pics/Table.png" id="table"></img>
       <p>Notice that here we have a nested environment (tabular within a center). This is perfectly legal and everything, I just thought y'all should know that it is.</p>
       <p>LaTeX being LaTeX, everything in the table must be specified. Where and where not to draw a vertical line, a horizontal line, etc.</p>
       <p>While this makes LaTeX tedious at times, it gives you a level of customization far greater than any standard word processor.</p>
@@ -164,7 +172,7 @@ in.</li>
       <p>For example, the package <i>fullpage</i> will set the margins of the paper to normal 1 in. x 1 in. instead of standard math paper margins.</p>
       <h2> Pictures </h2>
       <p>The easiest way to insert a picture in LaTeX is with the package <i>graphicx</i>.</p>
-      <pre><code>
+      <pre id="catCode"><code>
 	  \usepackage{graphicx} 
 	  .....
 	  \begin{figure}[h]
@@ -172,12 +180,13 @@ in.</li>
 	      \includegraphics[scale = 0.5]{heavy_breathing}
 	  \end{figure}
       </code></pre>
+      <img src="../static/pics/heavy_breathing.jpg" id="cat"></img>
       <p>Here, the [h] is an additional argument that can be given to the environment.</p>
       <p><i>h</i> means to display the image here on the page. Images enclosed in figure environments will float to the top of the page by default.</p>
       <p>You can also use the arguments <i>t</i> for top, <i>b</i> for bottom, etc.</p>
       <p>And you can use more than one argument in order of preference in case one of them fails, like so: <b>[htb]</b></p>
       <h2> SI Units </h2>
-      <pre><code>
+      <pre id="physicsCode"><code>
 	  \usepackage{siunitx} 
 	  .....
 	  \begin{equation}
@@ -185,6 +194,7 @@ in.</li>
 	      F = mg = 0.560\ \si{kg}*9.81\ \si{m/s^2} = 5.49\ \si{N} \\
 	  \end{equation}
       </code></pre>
+      <img src="../static/pics/Physics.png" id="physics"></img>
       <p>
 	Putting a \ after any word or number adds a space. There are different size spaces you can add, such as <b>\</b>, (thin space), <b>\enspace</b> (0.5 cm), <b>\quad</b> (1 cm), etc.
       </p>

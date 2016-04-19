@@ -8,6 +8,14 @@
     shape-rendering: crispEdges;
 }
 
+#cat {
+    padding-left: 100px; 
+}
+
+#centerCode {
+    padding-left: 150px;
+}
+
 .column{
     margin: auto;
     width: 720px;
@@ -41,8 +49,36 @@
     left: 0;
 }
 
+#electric {
+    padding-left: 55px;
+}
+
 h2 {
     align: center;
+}
+
+#ihop {
+    padding-left: 60px;
+}
+
+#ol {
+    padding-left: 55px;
+}
+
+#physics {
+    padding-left: 120px;
+}
+
+#pythagorean {
+    padding-left: 40px;
+}
+
+#riemann {
+    padding-left: 50px;
+}
+
+#table {
+    padding-left: 60px;
 }
 
 svg {
